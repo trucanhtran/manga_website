@@ -18,7 +18,7 @@ class Beeng
 
     arr_category.each do |item|
       begin
-        collect_product(item)
+        collect_product_paging(item)
       rescue
         puts "Error product here: #{item[:category_link]}"
       end
@@ -41,12 +41,35 @@ class Beeng
   end
 
   # start using link category to get all products
-  def collect_product(category)
+  def collect_product_paging(category)
     get_total_paging = using_nokogiri(category[:category_link]).css("div.paging ul li.hidden-xs").first.content.to_i || 1
-    byebug
-    category = Category.find_or_create_by(name: category[:category_name])
+    Category.find_or_create_by(name: category[:category_name])
 
-    using_nokogiri(category[:category_link])
+    (1..get_total_paging).each do |page|
+      get_product_links(("#{category[:category_link]}?page=#{page}"))
+    end
+  end
+
+  # collect all product
+  def get_product_links(product_url)
+    arr_product_list = []
+    document = using_nokogiri(product_url)
+    document.css("div.listComic ul.list li").each do |item|
+      begin
+        arr_product_list << item.css("div.detail h3 a").first["href"]
+      rescue
+        puts "Error product detail here: #{item}"
+      end
+    end
+
+    arr_product_list.each do |item|
+      get_chapter_detail(item)
+    end
+  end
+
+  # collect chapter
+  def get_chapter_detail(chapter_url)
+    document = using_nokogiri(chapter_url)
   end
 
   def save_to_db
