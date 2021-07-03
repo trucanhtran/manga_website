@@ -1,0 +1,53 @@
+// Place all the styles related to the Manga controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#id_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 10px 56px 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  max-height: 80px;
+}
+.left-nav,
+.right-nav {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+.right-nav {
+  justify-content: space-between;
+}
+
+#id_nav {
+  padding: 20px 0 20px 12px;
+}
+#id_nav a {
+  padding-right: 12px;
+  text-decoration: none;
+  color: #91bbee;
+  font-weight: bold;
+}
+.search,
+.btn {
+  flex-grow: 1;
+}
+.search-btn img {
+  width: 24px;
+}
+.btn {
+  padding: 20px 0;
+}
+.btn a {
+  background-color: #91bbee;
+  width: 20px;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+}

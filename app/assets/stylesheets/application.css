@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+@import "manga";
+
+body {
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.logo img {
+  padding-top: 2px;
+  width: 65px;
+}
+
+.blue {
+  color: #91bbee;
+}
