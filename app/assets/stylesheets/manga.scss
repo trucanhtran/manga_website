@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+/* Header */
 #id_header {
   display: flex;
   flex-direction: row;
@@ -13,6 +14,7 @@
   right: 0;
   top: 0;
   max-height: 80px;
+  background-color: white;
 }
 
 .left-nav,
@@ -81,4 +83,50 @@
   color: #fff;
   text-decoration: none;
   border-radius: 20px;
+}
+
+/* Slider*/
+#id_slider {
+  min-width: 100%;
+  background-color: #91bbee;
+  min-height: 450px;
+}
+/* Content */
+#id_content {
+  min-height: 900px;
+}
+
+.hot-products,
+.new-products {
+  min-height: 450px;
+  margin-top: 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Footer */
+#id_footer {
+  min-height: 200px;
+  background-color: #ccc;
+}
+
+#id_footer div {
+  text-align: center;
+}
+
+#id_footer div:first-of-type {
+  padding-top: 16px;
+}
+
+#id_footer .logo img {
+  width: 82px;
+  margin: auto;
+}
+#id_footer .contact {
+  text-align: center;
+  font-size: 12px;
 }
