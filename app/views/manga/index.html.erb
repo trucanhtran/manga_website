@@ -2,7 +2,12 @@
   <%= render 'header' %>
 </div>
 <div id="id_slider">
-  <h2>This is slider</h2>
+ <% @products.each do |product| %>
+ <div class="thumbnail">
+    <%= image_tag product.thumbnail_url %>
+ </div>
+ <% end %>
+
 </div>
 <div id="id_content">
   <div class="hot-products">
