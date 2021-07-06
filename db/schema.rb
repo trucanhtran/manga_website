@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_06_30_153835) do
   create_table "chapters", force: :cascade do |t|
     t.string "title"
     t.integer "view_counts"
+    t.text "image_list"
     t.bigint "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -32,10 +33,11 @@ ActiveRecord::Schema.define(version: 2021_06_30_153835) do
 
   create_table "products", force: :cascade do |t|
     t.string "title"
-    t.text "description"
-    t.integer "view_counts"
-    t.string "author"
-    t.text "url"
+    t.text "thumbnail_url"
+    t.integer "current_view_counts"
+    t.integer "view_count"
+    t.string "short_description"
+    t.string "current_chapter"
     t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
