@@ -116,18 +116,33 @@
 }
 
 .products {
-  padding-left: 56px;
+  padding: 0 56px;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 16px;
 }
 
 .product-card {
+  width: 20%;
 }
 .product-information {
+  margin: auto;
+  padding: 1px 4px;
 }
 .product-name {
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .product-chapters {
+}
+.product-name a,
+.product-chapters a {
+  text-align: center;
+  text-decoration: none;
+  padding-right: 6px;
 }
 .product-stars {
 }
@@ -139,6 +154,9 @@
 #id_footer {
   min-height: 200px;
   background-color: #ccc;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 #id_footer div {
@@ -187,6 +205,41 @@
   font-size: 24px;
   margin: auto;
   width: fit-content;
-  border-bottom: 1px solid #91bbee;
   color: #91bbee;
+}
+
+.chapters {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 56px;
+  padding-top: 24px;
+}
+
+.chapter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 48%;
+  margin-left: 8px;
+  margin-right: 16px;
+  border-bottom: 1px solid #d7dee7;
+  padding-top: 4px;
+}
+
+.chap-title {
+  line-height: 1.5;
+}
+
+.chap-title a {
+  text-decoration: none;
+  color: black;
+}
+
+.chap-title:hover a {
+  color: #91bbee;
+  text-decoration: underline;
+}
+
+.chapter img {
+  width: 32px;
 }
