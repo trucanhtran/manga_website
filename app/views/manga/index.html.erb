@@ -21,7 +21,7 @@
               <%= link_to product.title, show_product_path(product.id) %>
             </div>
             <div class="product-chapters">
-              <%= link_to product.chapters.size, "#" %>
+              <%= link_to product.chapters.first.title, "#" %>
             </div>
             <div class="product-stars">
               <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>

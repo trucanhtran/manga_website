@@ -14,6 +14,8 @@
       <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>
     </div>
     <div>(Hãy tham gia bình chọn cho truyện bạn nhé!)</div>
+    <div> Nhóm dịch: <span>Đang cập nhật</span></div>
+    <div> Tác giả: <span>Đang cập nhật</span></div>
   </div>
 </div>
 <div class="list-chapters">
@@ -22,7 +24,7 @@
     <% @chapters.each do |chap| %>
       <div class="chapter">
         <div class="chap-title">
-          <%=link_to chap.title %>
+          <%= link_to chap.title %>
         </div>
         <div>
           <%= image_tag "https://cdn.iconscout.com/icon/free/png-256/bookmark-1754138-1493251.png" %>
