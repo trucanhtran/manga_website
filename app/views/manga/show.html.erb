@@ -1,14 +1,11 @@
-<div id="id_header">
-  <%= render 'header' %>
-</div>
+<!--Header!-->
+ <%= render 'header' %>
+
 <div class="product-details">
   <%= image_tag "https://cdn.beeng.org/mangas/2021/07/05/07/nusunde-lilith.jpg" %>
   <div class="product-description">
-    <h3>Nusunde Lilith</h3>
-    <p>Một đứa em ban sáng làm người mẫu ... cho ông anh vẽ,
-    ban đêm đi cướp bức trang của anh vì lý do ngớ ngẩn dẫn đến
-    bao chuyện cười ra nước mắt và mất máu liên tục. Để biết thêm
-    chi tiết mời các bạn đọc chap truyện bên dưới nhé...</p>
+    <h3><%= @product.title %></h3>
+    <p><%= @product.short_description %></p>
     <div class="product-stars">
       <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>
       <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>
@@ -21,7 +18,22 @@
 </div>
 <div class="list-chapters">
   <div class="title"> Danh sách chương</div>
+  <div class="chapters">
+    <% @chapters.each do |chap| %>
+      <div class="chapter">
+        <div class="chap-title">
+          <%=link_to chap.title %>
+        </div>
+        <div>
+          <%= image_tag "https://cdn.iconscout.com/icon/free/png-256/bookmark-1754138-1493251.png" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 <div class="same-products">
   <div class="title"> Truyện tương tự</div>
 </div>
+
+<!--Footer!-->
+ <%= render 'footer' %>
