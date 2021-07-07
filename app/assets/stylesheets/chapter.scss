@@ -6,12 +6,21 @@
 .chapter-details {
   background-color: #282828;
 }
+
+.l-title {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 16px;
+}
+
 .select-chapter {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 24px 56px 0;
 }
+
 .select-chapter div {
   flex-grow: 1;
 }

@@ -1,5 +1,11 @@
 <%= render 'manga/header' %>
 <div class="chapter-details">
+  <div class="l-title">
+
+    <span>  <%= @product.title %>:</span>
+    <span><%= @chapter.title %></span>
+
+  </div>
   <div class="select-chapter">
     <div>
       <%= form_with do |form| %>
