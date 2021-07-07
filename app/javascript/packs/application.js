@@ -11,3 +11,30 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require("jquery");
+
+function displayChapter(data){
+  document.getElementById("id_chapter_content").innerHTML = "";
+  const arrImage =data.image_list.split(",")
+  for (let i=0 ; i < arrImage.length; i++){
+    var node = document.createElement("img");
+    node.setAttribute("src", arrImage[i]);
+    node.setAttribute("loading", "auto");
+    document.getElementById("id_chapter_content").appendChild(node);
+  }
+}
+
+function changeTitle(data){
+  $("#id_chapter_title").text(data.title)
+
+}
+
+$(document).ready(function(){
+  $(document).on("change", "#chapter_id", function(event){
+    $.post("/change_chapter",{chapter_id: event.target.value } ,function(data, status){
+      displayChapter(data);
+      changeTitle(data);
+    })
+  });
+});

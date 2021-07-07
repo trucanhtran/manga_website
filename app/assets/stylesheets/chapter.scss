@@ -1,0 +1,55 @@
+// Place all the styles related to the Chapter controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/*Show Chapter*/
+.chapter-details {
+  background-color: #282828;
+}
+
+.l-title {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 16px;
+}
+
+.select-chapter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 24px 56px 0;
+}
+
+.select-chapter div {
+  flex-grow: 1;
+}
+.field {
+  padding: 20px 0;
+}
+
+.field select {
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.field select:focus,
+.field select:active {
+  outline: none;
+}
+
+.btn-back {
+  margin: 10px 0;
+}
+.chapter-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 100px;
+  background: #282828;
+}
+
+.chapter-content img {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 24px;
+}
