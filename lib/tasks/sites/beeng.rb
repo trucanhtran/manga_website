@@ -44,7 +44,8 @@ class Beeng
   # start using link category to get all products
   def collect_product_paging(category)
     puts "#{Time.zone.now} start crawling paging category"
-    get_total_paging = using_nokogiri(category[:category_link]).css("div.paging ul li.hidden-xs").first.content.to_i || 1
+    # get_total_paging = using_nokogiri(category[:category_link]).css("div.paging ul li.hidden-xs").first.content.to_i || 1
+    get_total_paging = 1
     current_category = Category.find_or_create_by(name: category[:category_name])
 
     (1..get_total_paging).each do |page|
@@ -77,7 +78,7 @@ class Beeng
     title = document.css("div.detail h1").first.content
     short_description = document.css("div.shortDetail").first.content.strip
     current_view_counts = document.at('ul li:contains("Lượt xem")').content.squish.gsub("Lượt xem:", "").squish.gsub(",", "").to_i
-    thumbnail_url = document.at('div.cover img').attribute('src').value
+    thumbnail_url = document.at('div.cover img').attribute("data-src").value
 
     document.css('div.listChapters ul.list li').each do |item|
       begin
