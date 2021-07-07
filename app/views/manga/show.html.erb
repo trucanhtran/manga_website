@@ -24,7 +24,7 @@
     <% @chapters.each do |chap| %>
       <div class="chapter">
         <div class="chap-title">
-          <%= link_to chap.title %>
+          <%= link_to chap.title, show_chapter_path(chap.id) %>
         </div>
         <div>
           <%= image_tag "https://cdn.iconscout.com/icon/free/png-256/bookmark-1754138-1493251.png" %>

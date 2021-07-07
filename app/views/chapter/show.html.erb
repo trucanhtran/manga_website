@@ -1,0 +1,25 @@
+<%= render 'manga/header' %>
+<div class="chapter-details">
+  <div class="select-chapter">
+    <div>
+      <%= form_with do |form| %>
+      <div class="field">
+          <%= form.collection_select :chapter_id, @chapters, :id, :title %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="btn btn-back">
+      <%= link_to "Quay lại", show_product_path(@chapter.product.id) %>
+    </div>
+  </div>
+
+
+  <div class="chapter-content">
+    <% @chapter.image_list.split(",").each do |chap| %>
+      <%= image_tag chap %>
+    <% end %>
+  </div>
+</div>
+
+<%= render 'manga/footer' %>
