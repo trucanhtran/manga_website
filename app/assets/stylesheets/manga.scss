@@ -126,18 +126,22 @@
 .product-card {
   width: 20%;
 }
+
 .product-information {
   margin: auto;
   padding: 1px 4px;
 }
+
 .product-name {
   line-height: 1.5;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .product-chapters {
 }
+
 .product-name a,
 .product-chapters a {
   text-align: center;
@@ -186,12 +190,28 @@
   border-bottom: 1px solid #91bbee;
 }
 
-.product-details img {
+.product-details .product-img {
   margin-left: 6px;
+  height: auto;
+  max-height: 270px;
+  min-height: 261px;
 }
 
 .product-description {
   padding-left: 16px;
+}
+
+.more-info {
+  display: flex;
+  flex-direction: row;
+  padding: 12px 6p;
+}
+
+.more-info .div {
+}
+
+.more-info div:nth-child(2) {
+  align-self: center;
 }
 
 .list-chapters,
