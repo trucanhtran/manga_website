@@ -1,0 +1,12 @@
+<%= render 'manga/header' %>
+
+<div class="categories">
+  <% @categories.each do |category| %>
+    <div class="category">
+      <%=link_to category.name, show_category_path(category.id) %>
+    </div>
+  <% end %>
+</div>
+
+
+<%= render 'manga/footer' %>

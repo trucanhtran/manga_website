@@ -6,7 +6,8 @@ class MangaController < ApplicationController
   end
 
   def show
+    @categories = Category.all
     @product = Product.find_by(id: params[:id])
-    @chapters = @product.chapters.all
+    @chapters = @product.chapters.all.order(updated_at: :asc)
   end
 end

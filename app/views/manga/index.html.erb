@@ -15,7 +15,7 @@
     <div class="products">
       <% @hot_products.each do |product| %>
         <div class="product-card blue">
-          <%= image_tag "https://cdn.beeng.org/mangas/2021/07/05/07/nusunde-lilith.jpg"%>
+          <%= link_to image_tag(product.thumbnail_url), show_product_path(product.id), class: 'product-image'%>
           <div class="product-information">
             <div class="product-name">
               <%= link_to product.title, show_product_path(product.id) %>
