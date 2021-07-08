@@ -1,4 +1,5 @@
 <%= render 'manga/header' %>
+
 <div class="chapter-details">
   <div class="l-title">
 
@@ -10,7 +11,7 @@
     <div>
       <%= form_with do |form| %>
       <div class="field">
-          <%= form.collection_select :chapter_id, @chapters, :id, :title, id: 'id_select_chapter' %>
+          <%= form.collection_select :chapter_id, @chapters, :id, :title, include_blank: @chapter.title %>
         </div>
       <% end %>
     </div>

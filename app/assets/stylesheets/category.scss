@@ -1,0 +1,12 @@
+// Place all the styles related to the Category controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* Show */
+.categories {
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #91bbee;
+  padding-top: 16px 56px;
+}

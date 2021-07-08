@@ -15,6 +15,7 @@
  */
 @import "manga";
 @import "chapter";
+@import "category";
 
 body {
   width: 100%;
