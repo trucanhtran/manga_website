@@ -10,4 +10,16 @@ class MangaController < ApplicationController
     @product = Product.find_by(id: params[:id])
     @chapters = @product.chapters.all.order(updated_at: :asc)
   end
+
+  def search
+    @products = Product.where("title LIKE ?", "%#{params[:keyword]}%")
+    respond_to do |format|
+      format.html {redirect_to :show_result}
+    end
+
+    def show_result
+      @categories = Category.all
+      @products = Product.where("title LIKE ?", "%#{params[:keyword]}%")
+    end
+  end
 end
