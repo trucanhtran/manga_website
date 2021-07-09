@@ -1,5 +1,6 @@
 class ChapterController < ApplicationController
   def show
+    @categories = Category.all
     @chapter = Chapter.find_by(id: params[:id])
     @product = @chapter.product
     @chapters= @product.chapters.all.order(updated_at: :asc)
