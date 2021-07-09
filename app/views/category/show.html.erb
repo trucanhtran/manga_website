@@ -1,12 +1,14 @@
 <%= render 'manga/header' %>
 
-<div class="categories">
-  <% @categories.each do |category| %>
-    <div class="category">
-      <%=link_to category.name, show_category_path(category.id) %>
-    </div>
-  <% end %>
+<div class="menu">
+  <div class="title left-text">Thể loại</div>
+  <div class="categories">
+    <% @categories.each do |category| %>
+      <div class="category">
+        <%=link_to category.name, show_category_path(category.id) %>
+      </div>
+    <% end %>
+  </div>
 </div>
-
 
 <%= render 'manga/footer' %>

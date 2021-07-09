@@ -2,7 +2,7 @@
  <%= render 'header' %>
 
 <div class="product-details">
-  <%= image_tag "https://cdn.beeng.org/mangas/2021/07/05/07/nusunde-lilith.jpg", class:"product-img"%>
+  <%= image_tag @product.thumbnail_url, class:"product-img"%>
   <div class="product-description">
     <h3><%= @product.title %></h3>
     <p><%= @product.short_description %></p>
@@ -15,14 +15,21 @@
     </div>
     <div>(Hãy tham gia bình chọn cho truyện bạn nhé!)</div>
     <div class="more-info">
-      <div><h4> Nhóm dịch: </h4></div>
+      <div class="bold">Nhóm dịch:</div>
       <div>Đang cập nhật...</div>
     </div>
     <div class="more-info">
-      <div><h4> Tác giả: </h4></div>
+      <div class="bold">Tác giả:</div>
       <div>Đang cập nhật...</div>
-      </div>
+    </div>
+    <div class="more-info">
+      <div class="bold">View counts:</div>
+      <div><%= @product.current_view_counts %></div>
+    </div>
   </div>
+</div>
+<div class="btn-category btn">
+  <%= link_to @product.category.name %>
 </div>
 <div class="list-chapters">
   <div class="title"> Danh sách chương</div>

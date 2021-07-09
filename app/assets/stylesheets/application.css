@@ -30,3 +30,7 @@ body {
 .blue {
   color: #91bbee;
 }
+
+.bold {
+  font-weight: bold;
+}
