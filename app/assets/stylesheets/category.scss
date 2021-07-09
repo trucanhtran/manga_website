@@ -3,10 +3,36 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 /* Show */
+.menu {
+  background-color: #91bbee;
+  padding: 16px 56px;
+}
+
+.title {
+  color: black;
+}
+
+.menu .left-text {
+  text-align: left;
+}
 .categories {
   min-height: 300px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background-color: #91bbee;
-  padding-top: 16px 56px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 16px;
+}
+
+.category {
+  width: 20%;
+}
+
+.category a {
+  color: black;
+  text-decoration: none;
+}
+
+.category a:hover {
+  font-weight: bold;
+  text-decoration: underline;
 }

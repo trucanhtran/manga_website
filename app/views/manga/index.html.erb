@@ -4,7 +4,7 @@
 <div id="id_slider">
  <% @products.each do |product| %>
  <div class="thumbnail">
-    <%= image_tag product.thumbnail_url %>
+    <%=link_to image_tag(product.thumbnail_url), show_product_path(product.id) %>
  </div>
  <% end %>
 
@@ -40,6 +40,28 @@
   </div>
   <div class="new-products">
     <div class="title blue">Mới Nhất</div>
+     <div class="products">
+      <% @new_products.each do |product| %>
+        <div class="product-card blue">
+          <%= link_to image_tag(product.thumbnail_url), show_product_path(product.id), class: 'product-image'%>
+          <div class="product-information">
+            <div class="product-name">
+              <%= link_to product.title, show_product_path(product.id) %>
+            </div>
+            <div class="product-chapters">
+              <%= link_to product.chapters.first.title, "#" %>
+            </div>
+            <div class="product-stars">
+              <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>
+              <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>
+              <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>
+              <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>
+              <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
     <div class="btn">
       <%= link_to "Xem thêm", "#" %>
     </div>

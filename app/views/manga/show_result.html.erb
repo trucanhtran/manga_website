@@ -1,5 +1,27 @@
-<% @products.each do |product| %>
-  <%=image_tag product.thumbnail_url %>
-  <%= product.title %>
-  <%= product.chapters.first.title %>
-<% end %>
+<%= render 'header' %>
+
+<div class="title blue">Tìm kiếm từ khóa</div>
+<div id="id_products_list" class="products">
+   <% @products.each do |product| %>
+        <div class="product-card blue">
+          <%= link_to image_tag(product.thumbnail_url), show_product_path(product.id), class: 'product-image'%>
+          <div class="product-information">
+            <div class="product-name">
+              <%= link_to product.title, show_product_path(product.id) %>
+            </div>
+            <div class="product-chapters">
+              <%= link_to product.chapters.first.title, "#" %>
+            </div>
+            <div class="product-stars">
+              <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>
+              <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>
+              <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>
+              <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>
+              <%= image_tag "https://emojigraph.org/media/google/star_2b50.png" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+</div>
+
+<%= render 'footer' %>

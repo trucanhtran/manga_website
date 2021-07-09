@@ -35,6 +35,6 @@ $(document).ready(function(){
     $.post("/change_chapter",{chapter_id: event.target.value } ,function(data, status){
       displayChapter(data);
       changeTitle(data);
-    })
+    });
   });
 });
