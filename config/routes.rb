@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   # Categoies
   get 'categories', to: 'category#show', as: 'show_categories'
   get 'category/:id', to: 'category#show_category', as: 'show_category'
+  #Signup login
+  get 'login', to: 'user#login', as: 'login'
+  post 'login', to: 'user#session'
+  get 'signup', to: 'user#signup'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
