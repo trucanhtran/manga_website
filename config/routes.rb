@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   # Categoies
   get 'categories', to: 'category#show', as: 'show_categories'
   get 'category/:id', to: 'category#show_category', as: 'show_category'
+  get 'hot_products', to: 'category#show_hot_products', as: 'hot_products'
+  get 'new_products', to: 'category#show_new_products', as: 'new_products'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

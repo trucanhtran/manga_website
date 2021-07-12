@@ -8,4 +8,14 @@ class CategoryController < ApplicationController
     @category = Category.find_by(id: params[:id])
     @products = @category.products.order(current_view_counts: :desc).limit(5)
   end
+
+  def show_hot_products
+    @categories = Category.all
+    @hot_products = Product.order(current_view_counts: :desc).limit(20)
+  end
+
+  def show_new_products
+    @categories = Category.all
+    @new_products = Product.order(updated_at: :desc).limit(20)
+  end
 end

@@ -1,0 +1,24 @@
+<%= render 'manga/header' %>
+
+<div class= "menu">
+  <div class="title left-text">
+    Hot
+  </div>
+  <div class="products">
+    <% @hot_products.each do |product| %>
+          <div class="product-card blue">
+            <%= link_to image_tag(product.thumbnail_url), show_product_path(product.id), class: 'product-image'%>
+            <div class="product-information">
+              <div class="product-name">
+                <%= link_to product.title, show_product_path(product.id) %>
+              </div>
+              <div class="product-chapters">
+                <%= link_to product.chapters.first.title, "#" %>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+</div>
+
+<%= render 'manga/footer' %>

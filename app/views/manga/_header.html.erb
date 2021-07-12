@@ -4,8 +4,8 @@
       <%= link_to image_tag("https://beeng.org/images/logo-beeng.png"), root_path %>
     </div>
     <div id="id_nav" class="blue">
-      <div><a href="#">Hot</a></div>
-      <div><a href="#">Mới nhất</a></div>
+      <div><%= link_to 'Hot', hot_products_path %></div>
+      <div><%= link_to 'Mới nhất', new_products_path %></div>
       <div><a href="#">Đề xuất</a></div>
       <div class="sub-nav">
         <div class="categories-nav"> <%= link_to "Thể loại",  show_categories_path %> </div>
