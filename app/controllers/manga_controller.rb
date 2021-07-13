@@ -25,4 +25,27 @@ class MangaController < ApplicationController
       @categories = Category.all
       @products = Product.where("title LIKE ?", "%#{params[:keyword]}%")
     end
+
+    def login
+
+    end
+
+    def signup
+      @user = User.new
+      if @user.save
+        respond_to do |format|
+          format.html{ redirect_to root_path, notice: 'Sign Up successfully'}
+        end
+      end
+    end
+
+    def create_user
+      @user = User.new(user_params)
+      @user.save
+    end
+
+    private
+    def user_params
+      params.require(:user).permit(:name, :email, :password)
+    end
 end
