@@ -26,8 +26,12 @@
         <img src="https://cdn.icon-icons.com/icons2/2551/PNG/512/search_icon_152764.png" alt="", id="id_btn_search">
       </div>
     </div>
-    <div class="btn">
-      <%= link_to "Đăng Nhập", "#" %>
-    </div>
+    <% if current_user.present? %>
+      <%= @user.name %>
+    <% else  %>
+      <div class="btn">
+        <%= link_to "Đăng Nhập", login_path %>
+      </div>
+    <% end %>
   </div>
 </div>
