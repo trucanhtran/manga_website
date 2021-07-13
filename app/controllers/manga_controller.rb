@@ -32,16 +32,15 @@ class MangaController < ApplicationController
 
     def signup
       @user = User.new
-      if @user.save
-        respond_to do |format|
-          format.html{ redirect_to root_path, notice: 'Sign Up successfully'}
-        end
-      end
+
     end
 
     def create_user
       @user = User.new(user_params)
-      @user.save
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to root_path, notice: 'Sign Up successfully'
+      end
     end
 
     private
