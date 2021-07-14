@@ -30,6 +30,13 @@ function changeTitle(data){
 
 }
 
+function handleDisplayComment(data){
+  var node = document.createElement("div");
+  var textNode = document.createTextNode(data);
+  node.appendChild(textNode);
+  document.getElementById("id_list_comment").appendChild(node);
+}
+
 $(document).ready(function(){
   $(document).on("change", "#chapter_id", function(event){
     $.post("/change_chapter",{chapter_id: event.target.value } ,function(data, status){
@@ -37,4 +44,10 @@ $(document).ready(function(){
       changeTitle(data);
     });
   });
+  $(document).on("click", "#id_send_comment", function(){
+    const content = $("#id_comment").value
+    $.post("/create_comment", {content: content}, function(data, status){
+      handleDisplayComment(data);
+    });
+  })
 });
