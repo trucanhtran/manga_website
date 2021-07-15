@@ -16,5 +16,9 @@ Rails.application.routes.draw do
   get 'login', to: 'manga#login', as: 'login'
   get 'signup', to: 'manga#signup', as: 'signup'
   post 'signup', to: 'manga#create_user'
+  post 'login', to: 'manga#check_user'
+  get 'logout', to: 'manga#logout', as: 'logout'
+  #Ajax comment
+  post 'create_comment', to: 'comment#create', as: 'create_comment'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

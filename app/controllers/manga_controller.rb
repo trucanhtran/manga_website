@@ -10,6 +10,7 @@ class MangaController < ApplicationController
     @categories = Category.all
     @product = Product.find_by(id: params[:id])
     @chapters = @product.chapters.all.order(updated_at: :asc)
+    @comments = Comment.all
   end
 
   def search
@@ -30,6 +31,18 @@ class MangaController < ApplicationController
 
     end
 
+    def check_user
+      @user = User.find_by(email: session_params[:email])
+      if @user.present? && @user.authenticate(session_params[:password])
+        session[:user_id] = @user.id
+        redirect_to root_path
+        flash[:notice] = "Login succsess"
+      else
+        render :login
+        flash.now[:error] = "Wrong email or password"
+      end
+    end
+
     def signup
       @user = User.new
 
@@ -43,7 +56,16 @@ class MangaController < ApplicationController
       end
     end
 
+    def logout
+      session.clear
+      redirect_to root_path
+    end
+
     private
+
+    def session_params
+      params.permit(:email, :password)
+    end
     def user_params
       params.require(:user).permit(:name, :email, :password)
     end
