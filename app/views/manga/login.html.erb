@@ -1,16 +1,27 @@
-<%= form_with do |form| %>
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+<div class="btn">
+        <%= link_to 'Trang chủ', root_path  %>
   </div>
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+<div class="group-btn">
+  <div class="btn-login">
+    <%= link_to 'Login', login_path  %>
   </div>
-  <div>
-    <%= form.submit %>
+  <div class="btn-signup">
+        <%= link_to 'Sign Up', signup_path  %>
   </div>
-<% end %>
-<div>
-    <%= link_to 'Sign Up', signup_path  %>
+</div>
+
+<div class="form">
+  <%= form_with do |form| %>
+    <div class="field">
+      <%= form.label :email, value:'Email:' %>
+      <%= form.text_field :email, placeholder:"Nhập email" %>
+    </div>
+    <div class="field">
+      <%= form.label :password, value:'Mật khẩu:' %>
+      <%= form.password_field :password, placeholder:"Nhập mật khẩu" %>
+    </div>
+    <div class= "btn btn-submit">
+      <%= form.submit 'Đăng nhập' %>
+    </div>
+  <% end %>
 </div>

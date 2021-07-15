@@ -32,7 +32,7 @@ function changeTitle(data){
 
 function handleDisplayComment(data){
   var node = document.createElement("div");
-  var textNode = document.createTextNode(data);
+  var textNode = document.createTextNode(data.content);
   node.appendChild(textNode);
   document.getElementById("id_list_comment").appendChild(node);
 }
@@ -45,9 +45,16 @@ $(document).ready(function(){
     });
   });
   $(document).on("click", "#id_send_comment", function(){
-    const content = $("#id_comment").value
-    $.post("/create_comment", {content: content}, function(data, status){
-      handleDisplayComment(data);
+    const content = $("#id_comment").val();
+    const productId = $("#id_product").text();
+    const userId =  $("#id_current_user").text();
+    $.post("/create_comment", {content: content, id: productId, user_id: userId}, function(data, status){
+      if (userId == ""){
+        alert("Bạn cần đăng nhập để thực hiện chức năng này!")
+      }
+      else{
+        handleDisplayComment(data)
+      }
     });
-  })
+  });
 });

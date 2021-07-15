@@ -1,20 +1,32 @@
-<%= form_with(model: @user, url: signup_path) do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
-<div>
+<div class="btn">
+        <%= link_to 'Trang chủ', root_path  %>
+</div>
+
+<div class="group-btn">
+  <div class="btn-login">
     <%= link_to 'Login', login_path  %>
+  </div>
+  <div class="btn-signup">
+        <%= link_to 'Sign Up', signup_path  %>
+  </div>
+</div>
+
+<div class="form">
+  <%= form_with(model: @user, url: signup_path) do |form| %>
+    <div class="field">
+      <%= form.label :name, value: 'Tên:' %>
+      <%= form.text_field :name, placeholder: "Nhập tên" %>
+    </div>
+    <div class="field">
+      <%= form.label :email, value: 'Email:' %>
+      <%= form.text_field :email, placeholder: "Nhập email" %>
+    </div>
+    <div class="field">
+      <%= form.label :password, value: 'Mật khẩu:' %>
+      <%= form.password_field :password, placeholder: "Nhập mật khẩu" %>
+    </div>
+    <div class= "btn btn-submit">
+      <%= form.submit 'Đăng kí' %>
+    </div>
+  <% end %>
 </div>

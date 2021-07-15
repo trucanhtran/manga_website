@@ -1,5 +1,7 @@
 <!--Header!-->
+<div class="header">
  <%= render 'header' %>
+</div>
 
 <div class="product-details">
   <%= image_tag @product.thumbnail_url, class:"product-img"%>
@@ -49,13 +51,23 @@
 <div class="same-products">
   <div class="title"> Truyện tương tự</div>
 </div>
-
-<div>Comment</div>
-<div>
-  <textarea id="id_comment"></textarea>
+<div id="id_product"><%= @product.id %></div>
+<% if current_user.present? %>
+  <div id="id_current_user"><%= current_user.id %></div>
+<% end %>
+<div class="blue title">Bình luận</div>
+<div class="place-comment">
+  <textarea id="id_comment" cols= "150" rows="10" placeholder="Nhập bình luận..."></textarea>
+  <div class="btn" id="id_send_comment">Send</div>
 </div>
-<div class="btn"><%= link_to 'Send',"#", id:'id_send_comment' %></div>
-<div id="id_list_comment">
+<div>
+  <div id="id_list_comment"></div>
+  <% @comments.each do |comment| %>
+    <div class="place-show-comment">
+      <div class="div-user blue"><%= comment.user.name %>:</div>
+      <div class="div-comment"><%= comment.content %></div>
+    </div>
+  <% end %>
 </div>
 <!--Footer!-->
  <%= render 'footer' %>

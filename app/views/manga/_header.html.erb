@@ -27,7 +27,12 @@
       </div>
     </div>
     <% if current_user.present? %>
-      <%= @user.name %>
+      <div class="user-name">
+        <%= @user.name %>
+      </div>
+      <div class="btn">
+        <%= link_to 'Đăng xuất', logout_path %>
+      </div>
     <% else  %>
       <div class="btn">
         <%= link_to "Đăng Nhập", login_path %>

@@ -34,3 +34,7 @@ body {
 .bold {
   font-weight: bold;
 }
+
+.header {
+  position: relative;
+}

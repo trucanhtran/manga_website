@@ -10,6 +10,7 @@ class MangaController < ApplicationController
     @categories = Category.all
     @product = Product.find_by(id: params[:id])
     @chapters = @product.chapters.all.order(updated_at: :asc)
+    @comments = Comment.all
   end
 
   def search
@@ -53,6 +54,11 @@ class MangaController < ApplicationController
         session[:user_id] = @user.id
         redirect_to root_path, notice: 'Sign Up successfully'
       end
+    end
+
+    def logout
+      session.clear
+      redirect_to root_path
     end
 
     private
