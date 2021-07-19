@@ -252,7 +252,7 @@
 .more-info {
   display: flex;
   flex-direction: row;
-  padding: 12px 6p;
+  margin-top: 8px;
 }
 
 .more-info .div {
@@ -260,6 +260,39 @@
 
 .more-info div:nth-child(2) {
   align-self: center;
+  padding-left: 4px;
+}
+
+.btn-follow {
+  background-color: #91bbee;
+  padding: 8px;
+  color: #fff;
+  border-radius: 20px;
+  line-height: 1.3;
+  cursor: pointer;
+}
+.btn-follow:hover {
+  opacity: 0.8;
+}
+
+.btn-facebook {
+  border: 1px solid #91bbee;
+  padding: 8px;
+  border-radius: 20px;
+  color: #91bbee;
+  display: flex;
+  flex-direction: row;
+  margin-left: 8px;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.btn-facebook:hover {
+  border-color: #ccc;
+}
+
+.btn-facebook img {
+  width: 20px;
 }
 
 .list-chapters,

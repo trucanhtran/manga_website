@@ -8,7 +8,11 @@ class MangaController < ApplicationController
 
   def show
     @categories = Category.all
+    @products = Product.all.limit(5)
     @product = Product.find_by(id: params[:id])
+    view_counts = @product.current_view_counts
+    view_counts = view_counts + 1
+    @product.update(current_view_counts: view_counts)
     @chapters = @product.chapters.all.order(updated_at: :asc)
     @comments = Comment.all
   end
