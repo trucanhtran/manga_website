@@ -21,7 +21,7 @@ function displayChapter(data){
     var node = document.createElement("img");
     node.setAttribute("src", arrImage[i]);
     node.setAttribute("loading", "auto");
-    document.getElementById("id_chapter_content").appendChild(node);
+    document.getElementById("id_chapter_content").apendChild(node);
   }
 }
 
@@ -32,10 +32,12 @@ function changeTitle(data){
 
 function handleDisplayComment(data){
   var node = document.createElement("div");
+  node.setAttribute("class", "place-show-comment");
   var textNode = document.createTextNode(data.content);
   node.appendChild(textNode);
   document.getElementById("id_list_comment").appendChild(node);
 }
+
 
 $(document).ready(function(){
   $(document).on("change", "#chapter_id", function(event){

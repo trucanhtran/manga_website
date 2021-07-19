@@ -20,6 +20,7 @@
 body {
   width: 100%;
   font-family: sans-serif;
+  scroll-behavior: smooth;
 }
 
 .logo img {
@@ -33,6 +34,10 @@ body {
 
 .bold {
   font-weight: bold;
+}
+
+.small-text {
+  font-size: 12px;
 }
 
 .header {
